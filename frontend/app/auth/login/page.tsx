@@ -4,10 +4,8 @@ import { BASE_API_URL } from "@/global";
 import { storeCookie } from "@/lib/client-cookies";
 import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react";
-import { GiPadlock } from "react-icons/gi";
 import { HiEyeSlash } from "react-icons/hi2";
 import { IoEyeSharp } from "react-icons/io5";
-import { MdOutlineEmail } from "react-icons/md";
 import { toast } from "sonner";
 import axios from "axios";
 import Image from "next/image";
@@ -67,9 +65,9 @@ export default function Login() {
                         </div>
                     </div>
                     <div className="w-3/5 h-[500px] p-10 bg-white rounded-r-lg relative">
-                    <h1 className="text-2xl font-semibold mb-7">
-                        Login
-                    </h1>
+                        <h1 className="text-2xl font-semibold mb-7">
+                            Login
+                        </h1>
                         <form className="flex flex-col pt-5 gap-3" onSubmit={handleSubmit}>
                             <div className="flex w-full items-center rounded relative bg-cyan-600/5">
                                 <input type="email" placeholder="Email" className="pl-5 text-[#393e46] focus:outline-none py-3 text-sm w-full"
@@ -92,8 +90,8 @@ export default function Login() {
                                 LOGIN
                             </button>
                             <div className="flex flex-col justify-center text-center">
-                            <p className="text-xs text-slate-500 my-4">Or</p>
-                            <button onClick={() => {router.push("/auth/signup")}} className="uppercase bg-cyan-50 text-primary shadow-cyan-100 border border-cyan-100 hover:bg-primary hover:text-white rounded-full py-2">create account</button>
+                                <p className="text-xs text-slate-500 my-4">Or</p>
+                                <button onClick={() => { router.push("/auth/signup") }} className="uppercase text-sm bg-cyan-50 text-primary shadow-cyan-100 border border-cyan-100 hover:bg-primary hover:text-white rounded-full py-2 cursor-pointer">create account</button>
                             </div>
                         </form>
                     </div>

@@ -20,8 +20,6 @@ model User {
   password        String   @default("")
   profile_picture String   @default("")
   role            Role     @default(USER)
-  alamat          String   @default("")
-  telephone       String   @default("")
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }

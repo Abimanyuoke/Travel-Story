@@ -28,9 +28,8 @@ export const InputComponent = ({ value, onChange, type, className, id, required,
 
 export const InputGroupComponent = ({ value, onChange, type, className, id, required, placeholder, children, label, onKeyUp, readOnly }: Props) => {
     return (
-        <div className="w-full flex flex-col gap-1 my-2">
-            <strong className="text-xs font-bold text-slate-500">{label}{required == true ? <sup className="text-red-600">*&#41;</sup> : <></>}</strong>
-            <div className="w-full flex items-center gap-1 bg-white border-slate-500 rounded-md border">
+        <div className="w-full flex flex-col gap-1 my-2 bg-cyan-50 rounded">
+            <div className="w-full flex items-center gap-1">
                 {
                     children ?
                         <div className="px-2">
@@ -38,7 +37,7 @@ export const InputGroupComponent = ({ value, onChange, type, className, id, requ
                         </div> : <div className=""></div>
                 }
                 <input type={type} id={id} value={value} onChange={e => onChange(e.target.value)}
-                    className={`text-sm w-full text-wrap rounded-r-md p-2 bg-white  focus:outline-none ${className}`}
+                    className={`text-sm w-full text-wrap focus:outline-none py-3 ${className}`}
                     required={required ? required : false} placeholder={placeholder || ""}
                     readOnly={readOnly ? readOnly : false} onKeyUp={e => {
                         if (onKeyUp) onKeyUp(e)
@@ -56,7 +55,7 @@ export const TextGroupComponent = ({ value, onChange, className, id, required, p
                 {label}
                 {required == true ? <sup className="text-red-600">*&#41;</sup> : <></>}
             </strong>
-            <div className="w-full flex items-center gap-1 bg-white border-slate-500 rounded-md border">
+            <div className="w-full flex items-center gap-1 bg-white rounded-md">
                 <textarea id={id} value={value} cols={10} rows={3} onChange={e => onChange(e.target.value)}
                     className={`text-sm w-full rounded-md p-2 bg-white  focus:outline-none ${className}`}
                     required={required ? required : false} placeholder={placeholder || ""} />
